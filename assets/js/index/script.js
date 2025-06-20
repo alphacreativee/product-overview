@@ -337,14 +337,14 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
     if (!useGUIRotation) {
       modal.rotation.set(
-        THREE.MathUtils.degToRad(-25),
-        THREE.MathUtils.degToRad(-40),
+        THREE.MathUtils.degToRad(-5),
+        THREE.MathUtils.degToRad(0),
         isMobile ? 0 : THREE.MathUtils.degToRad(-25)
       );
       currentRotation = 0; // Reset currentRotation khi setupModal chạy
     }
 
-    const cameraDistance = isMobile ? 2 : 1.25;
+    const cameraDistance = isMobile ? 2 : 1.2;
     camera.position.set(
       0,
       0,
@@ -375,7 +375,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     }
   }
 
-  new GLTFLoader().load("./assets/images/modal.glb", (gltf) => {
+  new GLTFLoader().load("./assets/images/vacuum.glb", (gltf) => {
     modal = gltf.scene;
     modal.traverse((node) => {
       if (node.isMesh && node.material) {
