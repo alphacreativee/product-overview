@@ -146,7 +146,11 @@ document.addEventListener("DOMContentLoaded", (event) => {
     resetRotation: () => {
       if (modal) {
         const isMobile = window.innerWidth < 1024;
-        modal.rotation.set(0, 0, isMobile ? 0 : THREE.MathUtils.degToRad(-25));
+        modal.rotation.set(
+          THREE.MathUtils.degToRad(-25),
+          THREE.MathUtils.degToRad(-40),
+          isMobile ? 0 : THREE.MathUtils.degToRad(-25)
+        );
         lightParams.modalRotX = modal.rotation.x;
         lightParams.modalRotY = modal.rotation.y;
         lightParams.modalRotZ = modal.rotation.z;
@@ -332,7 +336,11 @@ document.addEventListener("DOMContentLoaded", (event) => {
     }
 
     if (!useGUIRotation) {
-      modal.rotation.set(0, 0, isMobile ? 0 : THREE.MathUtils.degToRad(-25));
+      modal.rotation.set(
+        THREE.MathUtils.degToRad(-25),
+        THREE.MathUtils.degToRad(-40),
+        isMobile ? 0 : THREE.MathUtils.degToRad(-25)
+      );
       currentRotation = 0; // Reset currentRotation khi setupModal chạy
     }
 
@@ -405,7 +413,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     pin: true,
     pinSpacing: true,
     scrub: 1,
-    markers: true,
+    // markers: true,
     onUpdate: ({ progress }) => {
       const headerProgress = Math.max(0, Math.min(1, (progress - 0.05) / 0.3));
       gsap.to(".header-1 ", {
