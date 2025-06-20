@@ -409,7 +409,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
   ScrollTrigger.create({
     trigger: ".product-overview",
     start: "top top",
-    end: `+=${window.innerHeight * 10}px`,
+    end: `+=${window.innerHeight * 5}px`,
     pin: true,
     pinSpacing: true,
     scrub: 1,
